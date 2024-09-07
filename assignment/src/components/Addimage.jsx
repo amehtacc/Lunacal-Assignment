@@ -3,8 +3,16 @@ import sliderImage from '../assets/sliderImage.png';
 import questionMark from '../assets/questionmark.png';
 import rectangle from '../assets/rectangle.png';
 
+
 function AddImage() {
-    const [images, setImages] = useState([sliderImage, sliderImage, sliderImage, sliderImage]);
+    const defaultImages = [
+        sliderImage,
+        sliderImage,
+        sliderImage,
+        sliderImage,
+    ]
+
+    const [images, setImages] = useState(defaultImages);
     const [currentIndex, setCurrentIndex] = useState(0);
     const fileInputRef = useRef(null);
 
@@ -39,18 +47,18 @@ function AddImage() {
                 <div className="gallery-btn">
                     <div className="gallery">Gallery</div>
                     <div className="btn">
-                            <button className="add-image-button" onClick={() => fileInputRef.current.click()}>
-                                + ADD IMAGE
-                            </button>
-                            <input
-                                id="addImage"
-                                type="file"
-                                multiple
-                                accept="image/*"
-                                ref={fileInputRef}
-                                style={{ display: 'none' }}
-                                onChange={handleImageUpload}
-                            />
+                        <button className="add-image-button" onClick={() => fileInputRef.current.click()}>
+                            + ADD IMAGE
+                        </button>
+                        <input
+                            id="addImage"
+                            type="file"
+                            multiple
+                            accept="image/*"
+                            ref={fileInputRef}
+                            style={{ display: 'none' }}
+                            onChange={handleImageUpload}
+                        />
                         <div className="slider-controls">
                             <button onClick={showPrevImage} className="slider-button">
                                 <i className="fa-solid fa-arrow-left"></i>
@@ -63,9 +71,12 @@ function AddImage() {
                 </div>
 
                 <div className="image-slider">
-                    {images.slice(currentIndex, currentIndex + 3).map((src, index) => (
-                        <img key={index} src={src} alt={`Slide ${currentIndex + index}`} className="gallery-images" />
-                    ))}
+                    {/* Slider track to contain all images and apply transformation */}
+                    <div className="slider-track" style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)`, }}>
+                        {images.map((src, index) => (
+                            <img key={index} src={src} alt={`Slide ${index}`} className="gallery-images" />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

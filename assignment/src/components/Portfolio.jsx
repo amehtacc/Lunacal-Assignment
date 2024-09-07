@@ -5,9 +5,6 @@ function Portfolio() {
 
     const buttonClicked = (buttonId) => {
         setActiveButton(buttonId);
-        if (activeButton === true) {
-
-        }
     }
 
     return (
