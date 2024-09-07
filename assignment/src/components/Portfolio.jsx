@@ -45,7 +45,7 @@ function Portfolio() {
               color: activeButton === 3 ? "#ffffff" : "#A3ADB2",
             }}
           >
-            Reommended
+            Recommended
           </button>
         </div>
         <div className="text-container">
