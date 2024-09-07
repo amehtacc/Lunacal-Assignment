@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import sliderImage from '../assets/sliderImage.png';
 import questionMark from '/public/images/question.png';
-import rectangle from '/public/images/question.png';
+import rectangle from '/public/images/rectangle.png';
 
 
 function AddImage() {

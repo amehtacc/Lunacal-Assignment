@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import questionMark from '/public/images/question.png';
-import rectangle from '/public/images/question.png';
+import rectangle from '/public/images/rectangle.png';
 
 function Portfolio() {
     const [activeButton, setActiveButton] = useState(1);
