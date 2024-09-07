@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import questionMark from '/public/images/question.png';
+import rectangle from '/public/images/question.png';
 
 function Portfolio() {
     const [activeButton, setActiveButton] = useState(1);
@@ -11,8 +13,8 @@ function Portfolio() {
 
         <div class="top-right">
             <div className='ques-rect'>
-                <img src="./src/assets/questionmark.png" alt="questionmark image" />
-                <img src="./src/assets/rectangle.png" alt="group of square" />
+                <img src={questionMark} alt="questionmark image" />
+                <img src={rectangle} alt="group of square" />
             </div>
             <div className='tab-text'>
                 <div class="tab-container">
